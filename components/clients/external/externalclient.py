@@ -45,4 +45,4 @@ class ExternalClient(Client):
 
         cmd = self.cli_command + cmd
 
-        return " ".join(cmd)
+        return " ".join(filter(None, cmd))

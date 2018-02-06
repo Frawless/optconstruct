@@ -14,7 +14,6 @@ class Client(ExternalClient):
     supported_protocols = [protocols.Amqp10()]
     name = 'Python Proton client'
     version = '1.0.1'
-    # @TODO join attributes from sender and receiver
 
     def __init__(self, node: Node):
         ExternalClient.__init__(self, node)

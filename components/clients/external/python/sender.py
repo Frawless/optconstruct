@@ -1,6 +1,9 @@
 from autologging import logged, traced
 
-from optconstruct.types.composed import BrokerURLPythonProton
+from optconstruct.types.composed.msg_clients.brokerurl import BrokerURLPythonProton
+from optconstruct.types.composed.msg_clients.msgcontentmap import MsgContentMap
+from optconstruct.types.composed.msg_clients.msgproperty import MsgProperty
+from optconstruct.types.composed.msg_clients.msgcontentlist import MsgContentList
 from optconstruct.types.prefixed import Prefixed
 from optconstruct.types import Toggle
 
@@ -24,65 +27,65 @@ class Sender(Client, amom.client.Sender):
         BrokerURLPythonProton('broker_url', '--broker-url'),
         Prefixed('count', '--count'),
         Prefixed('timeout', '--timeout'),
-        Prefixed('close_sleep', '--close-sleep'),
+        Prefixed('close-sleep', '--close-sleep'),
 
-        Prefixed('sync_mode', '--sync-mode'),
+        Prefixed('sync-mode', '--sync-mode'),
         Prefixed('duration', '--duration'),
-        Prefixed('duration_mode', '--duration-mode'),
+        Prefixed('duration-mode', '--duration-mode'),
         Prefixed('capacity', '--capacity'),
 
         # Logging options
-        Prefixed('log_lib', '--log-lib'),
-        Prefixed('log_stats', '--log-stats'),
-        Prefixed('log_msgs', '--log-msgs'),
+        Prefixed('log-lib', '--log-lib'),
+        Prefixed('log-stats', '--log-stats'),
+        Prefixed('log-msgs', '--log-msgs'),
 
         # Transaction options
-        Prefixed('tx_size', '--tx-size'),
-        Prefixed('tx_action', '--tx-action'),
-        Prefixed('tx_endloop_action', '--tx-endloop-action'),
+        Prefixed('tx-size', '--tx-size'),
+        Prefixed('tx-action', '--tx-action'),
+        Prefixed('tx-endloop-action', '--tx-endloop-action'),
 
         # Connection options
-        Prefixed('conn_urls', '--conn-urls'),
-        Prefixed('conn_reconnect', '--conn-reconnect'),
-        Prefixed('conn_reconnect_interval', '--conn-reconnect-interval'),
-        Prefixed('conn_reconnect_limit', '--conn-reconnect-limit'),
-        Prefixed('conn_reconnect_timeout', '--conn-reconnect-timeout'),
-        Prefixed('conn_heartbeat', '--conn-heartbeat'),
-        Prefixed('conn_ssl_certificate', '--conn-ssl-certificate'),
-        Prefixed('conn_ssl_private_key', '--conn-ssl-private-key'),
-        Prefixed('conn_ssl_password', '--conn-ssl-password'),
-        Prefixed('conn_ssl_trust_store', '--conn-ssl-trust-store'),
-        Toggle('conn_ssl_verify_peer', '--conn-ssl-verify-peer'),
-        Toggle('conn_ssl_verify_peer_name', '--conn-ssl-verify-peer-name'),
-        Prefixed('conn_handler', '--conn-handler'),
-        Prefixed('conn_max_frame_size', '--conn-max-frame-size'),
+        Prefixed('conn-urls', '--conn-urls'),
+        Prefixed('conn-reconnect', '--conn-reconnect'),
+        Prefixed('conn-reconnect_interval', '--conn-reconnect-interval'),
+        Prefixed('conn-reconnect_limit', '--conn-reconnect-limit'),
+        Prefixed('conn-reconnect_timeout', '--conn-reconnect-timeout'),
+        Prefixed('conn-heartbeat', '--conn-heartbeat'),
+        Prefixed('conn-ssl-certificate', '--conn-ssl-certificate'),
+        Prefixed('conn-ssl-private_key', '--conn-ssl-private-key'),
+        Prefixed('conn-ssl-password', '--conn-ssl-password'),
+        Prefixed('conn-ssl-trust-store', '--conn-ssl-trust-store'),
+        Toggle('conn-ssl-verify-peer', '--conn-ssl-verify-peer'),
+        Toggle('conn-ssl-verify-peer-name', '--conn-ssl-verify-peer-name'),
+        Prefixed('conn-handler', '--conn-handler'),
+        Prefixed('conn-max-frame-size', '--conn-max-frame-size'),
 
         # Link options
-        Toggle('link_durable', '--link-durable'),
-        Toggle('link_at_least_once', '--link-at-least-once'),
-        Toggle('link_at_most_once', '--link-at-most-once'),
+        Toggle('link-durable', '--link-durable'),
+        Toggle('link-at-least-once', '--link-at-least-once'),
+        Toggle('link-at-most-once', '--link-at-most-once'),
 
         # Message options
-        Prefixed('msg_id', '--msg-id'),
-        Prefixed('msg_subject', '--msg-subject'),
-        Prefixed('msg_reply_to', '--msg-reply-to'),
-        Prefixed('msg_durable', '--msg-durable'),
-        Prefixed('msg_ttl', '--msg-ttl'),
-        Prefixed('msg_priority', '--msg-priority'),
-        Prefixed('msg_correlation_id', '--msg-correlation-id'),
-        Prefixed('msg_user_id', '--msg-user-id'),
-        Prefixed('msg_group-id', '--msg-group-id'),
-        Prefixed('msg_property', '--msg-property'),
-        Prefixed('msg_content_map_item', '--msg-content-map-item'),
-        Prefixed('msg_content_list_item', '--msg-content-list-item'),
-        Prefixed('msg_content_from_file', '--msg-content-from-file'),
-        Prefixed('msg_content', '--msg-content'),
-        Prefixed('msg_content_type', '--msg-content-type'),
-        Prefixed('content_type', '--content-type'),
+        Prefixed('msg-id', '--msg-id'),
+        Prefixed('msg-subject', '--msg-subject'),
+        Prefixed('msg-reply-to', '--msg-reply-to'),
+        Prefixed('msg-durable', '--msg-durable'),
+        Prefixed('msg-ttl', '--msg-ttl'),
+        Prefixed('msg-priority', '--msg-priority'),
+        Prefixed('msg-correlation-id', '--msg-correlation-id'),
+        Prefixed('msg-user-id', '--msg-user-id'),
+        Prefixed('msg-group-id', '--msg-group-id'),
+        MsgProperty('msg-property', '--msg-property'),
+        MsgContentMap('msg-content-map-item', '--msg-content-map-item'),
+        MsgContentList('msg-content-list-item', '--msg-content-list-item'),
+        Prefixed('msg-content-from-file', '--msg-content-from-file'),
+        Prefixed('msg-content', '--msg-content'),
+        Prefixed('msg-content-type', '--msg-content-type'),
+        Prefixed('content-type', '--content-type'),
 
         # Reactor options
-        Toggle('reactor_peer_close_is_error', '--reactor-peer-close-is-error'),
-        Toggle('reactor_auto_settle_off', '--reactor-auto-settle-off'),
+        Toggle('reactor-peer-close-is-error', '--reactor-peer-close-is-error'),
+        Toggle('reactor-auto-settle-off', '--reactor-auto-settle-off'),
 
     ]
 
