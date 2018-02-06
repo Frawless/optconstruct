@@ -5,19 +5,27 @@ from optconstruct.types import BasicComposed
 
 class BrokerURLnodeJS(BasicComposed):
     """
-
+    BrokerURL option parser for nodeJS messaging client.
     """
+
+    composed_keys = {'host'}
 
     def generate_options(self, data, client=None):
         """
+        Generate option brokerURL option.
 
-        :param data:
-        :param client:
-        :return:
+        Parameters
+        ----------
+        :param data: data with specified option's values
+        :type data: dict
+        :param client: client's label
+        :type client: str
+        :return: option
+        :rtype: str
         """
         _ = client
 
-        broker_url = data.get('broker_url', None)
+        broker_url = data.get('broker-url', None)
 
         if broker_url is not None:
             broker_url = self.prefix + " " + broker_url
@@ -31,28 +39,35 @@ class BrokerURLnodeJS(BasicComposed):
         else:
             tmp_data = data
 
-        broker_url = reformat.reformat("%{credentials|%s@}%{host}%{port|:%s}", tmp_data)
+        broker_url = self.prefix + " " + reformat.reformat("%{credentials|%s@}%{host}%{port|:%s}", tmp_data)
 
         return broker_url
 
 
 class BrokerURLPythonProton(BasicComposed):
     """
-
+    BrokerURL option parser for Proton-Python messaging client.
     """
 
     def generate_options(self, data, client=None):
         """
+        Generate option brokerURL option.
 
-        :param data:
-        :param client:
-        :return:
+        Parameters
+        ----------
+        :param data: data with specified option's values
+        :type data: dict
+        :param client: client's label
+        :type client: str
+        :return: option
+        :rtype: str
         """
         _ = client
 
-        broker_url = data.get('broker_url', None)
+        broker_url = data.get('broker-url', None)
 
         if broker_url is not None:
+            print(broker_url)
             broker_url = self.prefix + " " + broker_url
             return broker_url
 
@@ -64,6 +79,6 @@ class BrokerURLPythonProton(BasicComposed):
         else:
             tmp_data = data
 
-        broker_url = reformat.reformat("%{credentials|%s@}%{host}%{port|:%s}%{address|/%s}", tmp_data)
+        broker_url = self.prefix + " " + reformat.reformat("%{credentials|%s@}%{host}%{port|:%s}%{address|/%s}", tmp_data)
 
         return broker_url

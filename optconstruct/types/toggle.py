@@ -8,10 +8,16 @@ class Toggle(BasicOptionAbstract):
 
     def generate_options(self, data, client=None):
         """
-        Method for generate toggle options.
-        :param data:
-        :param client:
-        :return:
+        Generate toggle options with prefix only.
+
+        Parameters
+        ----------
+        :param data: data with specified option's values
+        :type: dict
+        :param client: client's label
+        :type client: str
+        :return: option
+        :rtype: str
         """
         _ = client
         _ = data

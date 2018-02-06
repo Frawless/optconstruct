@@ -3,15 +3,21 @@ from optconstruct import BasicOptionAbstract
 
 class Prefixed(BasicOptionAbstract):
     """
-    Toggle client options parser.
+    Prefixed client options parser.
     """
 
     def generate_options(self, data, client=None):
         """
-        Method for generate toggle options.
-        :param data:
-        :param client:
-        :return:
+        Generate options with prefix and value.
+
+        Parameters
+        ----------
+        :param data: data with specified option's values
+        :type data: dict
+        :param client: client's label
+        :type client: str
+        :return: option
+        :rtype: str
         """
         _ = client
         _ = data
