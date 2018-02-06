@@ -1,3 +1,4 @@
 .idea
 .pyenv3
-*.pyc
+*.py[co]
+*cache*
