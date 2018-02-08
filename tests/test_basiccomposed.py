@@ -9,5 +9,10 @@ from optconstruct.types.composed import BasicComposed
 ])
 def test_satisfied(data, expected):
     obj = BasicComposed('msg-property', '--msg-property')
-
     assert obj.satisfied(data) is expected
+
+
+def test_generate():
+    obj = BasicComposed('msg-property', '--msg-property')
+    with pytest.raises(NotImplementedError):
+        obj.generate({'broker-url': '--broker-url'})
