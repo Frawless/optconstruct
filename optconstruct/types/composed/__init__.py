@@ -1,1 +1,1 @@
-from optconstruct.types.composed.msg_clients.brokerurl import *
+from optconstruct.types.composed.brokerurl import *

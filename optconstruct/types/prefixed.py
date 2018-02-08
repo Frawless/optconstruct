@@ -1,21 +1,21 @@
-from optconstruct import BasicOptionAbstract
+"""
+    # @TODO jstejska: Fill package info
+"""
+
+from optconstruct import OptionAbstract
 
 
-class Prefixed(BasicOptionAbstract):
-    """
-    Prefixed client options parser.
-    """
+class Prefixed(OptionAbstract):
+    """Prefixed client options parser."""
 
-    def generate_options(self, data, client=None):
-        """
-        Generate options with prefix and value.
+    def generate(self, data, client=None):
+        """Generate options with prefix and value.
 
-        Parameters
-        ----------
         :param data: data with specified option's values
         :type data: dict
         :param client: client's label
         :type client: str
+
         :return: option
         :rtype: str
         """

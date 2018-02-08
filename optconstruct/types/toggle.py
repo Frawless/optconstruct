@@ -1,21 +1,21 @@
-from optconstruct import BasicOptionAbstract
+"""
+    # @TODO jstejska: Fill package info
+"""
+
+from optconstruct import OptionAbstract
 
 
-class Toggle(BasicOptionAbstract):
-    """
-    Toggle client options parser.
-    """
+class Toggle(OptionAbstract):
+    """Toggle client options parser."""
 
-    def generate_options(self, data, client=None):
-        """
-        Generate toggle options with prefix only.
+    def generate(self, data, client=None):
+        """Generate toggle options with prefix only.
 
-        Parameters
-        ----------
         :param data: data with specified option's values
         :type: dict
         :param client: client's label
         :type client: str
+
         :return: option
         :rtype: str
         """

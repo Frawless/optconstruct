@@ -10,7 +10,7 @@ class BrokerURLnodeJS(BasicComposed):
 
     composed_keys = {'host'}
 
-    def generate_options(self, data, client=None):
+    def generate(self, data, client=None):
         """
         Generate option brokerURL option.
 
@@ -49,7 +49,7 @@ class BrokerURLPythonProton(BasicComposed):
     BrokerURL option parser for Proton-Python messaging client.
     """
 
-    def generate_options(self, data, client=None):
+    def generate(self, data, client=None):
         """
         Generate option brokerURL option.
 
