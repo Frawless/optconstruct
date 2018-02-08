@@ -6,7 +6,7 @@ from optconstruct import OptionAbstract
 
 
 class Toggle(OptionAbstract):
-    """Toggle client options parser."""
+    """Toggle client options constructor class."""
 
     def generate(self, data, client=None):
         """Generate toggle options with prefix only.

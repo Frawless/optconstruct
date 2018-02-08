@@ -6,7 +6,7 @@ from optconstruct import OptionAbstract
 
 
 class BasicComposed(OptionAbstract):
-    """Composed options parser."""
+    """Composed options constructor class."""
 
     composed_keys = set()
 

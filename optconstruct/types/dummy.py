@@ -6,7 +6,7 @@ from optconstruct import OptionAbstract
 
 
 class Dummy(OptionAbstract):
-    """Dummy client options parser."""
+    """Dummy client options constructor class."""
 
     def __init__(self, key: str, prefix: str = ''):
         """Init.

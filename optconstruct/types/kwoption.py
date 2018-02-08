@@ -7,7 +7,7 @@ from optconstruct import OptionAbstract
 
 
 class KWOption(OptionAbstract):
-    """Dictionary options parser."""
+    """Dictionary options constructor class."""
 
     def generate(self, data, client=None):
         """Generate options with prefix and value.

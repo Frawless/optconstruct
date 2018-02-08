@@ -6,7 +6,7 @@ from optconstruct.optionabstract import OptionAbstract
 
 
 class Argument(OptionAbstract):
-    """Argument client options parser."""
+    """Argument client options constructor class."""
 
     def generate(self, data, client=None):
         """Generate dummy options only with value without prefix.

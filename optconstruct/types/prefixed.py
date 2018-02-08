@@ -6,7 +6,7 @@ from optconstruct import OptionAbstract
 
 
 class Prefixed(OptionAbstract):
-    """Prefixed client options parser."""
+    """Prefixed client options constructor class."""
 
     def generate(self, data, client=None):
         """Generate options with prefix and value.
