@@ -1,5 +1,5 @@
 import pytest
-from optconstruct.types.composed.msg_clients.msgcontentmap import MsgContentMap
+from optconstruct.types.kwoptions.msgcontentmap import MsgContentMap
 
 test_data = [
     # Sample 1
@@ -35,17 +35,14 @@ test_data = [
 @pytest.mark.parametrize("data, expected", test_data)
 def test_msg_property(data, expected):
     obj = MsgContentMap('msg-content-map', '--msg-content-map')
-
-    assert obj.generate_options(data) == expected
+    assert obj.generate(data) == expected
 
 
 def test_fail_msg_property_empty():
     obj = MsgContentMap('msg-content-map', '--msg-content-map')
-
-    assert obj.generate_options({'msg-content-map': {}}) == ''
+    assert obj.generate({'msg-content-map': {}}) == ''
 
 
 def test_fail_msg_property_none():
     obj = MsgContentMap('msg-content-map', '--msg-content-map')
-
-    assert obj.generate_options({}) == ''
+    assert obj.generate({}) == ''

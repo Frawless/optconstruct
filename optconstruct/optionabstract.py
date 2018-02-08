@@ -2,25 +2,31 @@
     # TODO jstejska: Fill package info
 """
 
-from optconstruct import OptionAbstract
 
+class OptionAbstract:
+    """Option Abstract class."""
 
-class BasicComposed(OptionAbstract):
-    """Composed options parser."""
+    def __init__(self, key: str, prefix: str):
+        """Init.
 
-    composed_keys = set()
+        :param key: key value of attribute in data set
+        :type key: str
+        :param prefix: option prefix
+        :type prefix: str
+        """
+        self.key = key
+        self.prefix = prefix
 
     def satisfied(self, data: dict):
         """Check if client's option should be generated.
 
         :param data: data with specified option's values
         :type data: dict
-        :return: True or False
-        :rtype bool
-        """
-        self.composed_keys.add(self.key)
 
-        return bool(set(data.keys()).intersection(self.composed_keys))
+        :return: True or False
+        :rtype: bool
+        """
+        return bool(data.get(self.key, None))
 
     def generate(self, data, client=None):
         """Generate options.

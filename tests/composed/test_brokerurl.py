@@ -1,6 +1,6 @@
 import pytest
-from optconstruct.types.composed.msg_clients.brokerurl import BrokerURLnodeJS
-from optconstruct.types.composed.msg_clients.brokerurl import BrokerURLPythonProton
+from optconstruct.types.composed.brokerurl import BrokerURLnodeJS
+from optconstruct.types.composed.brokerurl import BrokerURLPythonProton
 
 
 @pytest.mark.parametrize("data, expected", [
@@ -25,8 +25,7 @@ from optconstruct.types.composed.msg_clients.brokerurl import BrokerURLPythonPro
 ])
 def test_proton_python(data, expected):
     obj = BrokerURLPythonProton('broker-url', '--broker-url')
-
-    assert obj.generate_options(data) == expected
+    assert obj.generate(data) == expected
 
 
 @pytest.mark.parametrize("data, expected", [
@@ -51,6 +50,5 @@ def test_proton_python(data, expected):
 ])
 def test_nodejs(data, expected):
     obj = BrokerURLnodeJS('broker-url', '--broker')
-
-    assert obj.generate_options(data) == expected
+    assert obj.generate(data) == expected
 

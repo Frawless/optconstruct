@@ -1,5 +1,5 @@
 import pytest
-from optconstruct.types.composed.msg_clients.msgproperty import MsgProperty
+from optconstruct.types.kwoptions.msgproperty import MsgProperty
 
 test_data = [
     # Sample 1
@@ -35,17 +35,14 @@ test_data = [
 @pytest.mark.parametrize("data, expected", test_data)
 def test_msg_property(data, expected):
     obj = MsgProperty('msg-property', '--msg-property')
-
-    assert obj.generate_options(data) == expected
+    assert obj.generate(data) == expected
 
 
 def test_fail_msg_property_empty():
     obj = MsgProperty('msg-property', '--msg-property')
-
-    assert obj.generate_options({'msg-property': {}}) == ''
+    assert obj.generate({'msg-property': {}}) == ''
 
 
 def test_fail_msg_property_none():
     obj = MsgProperty('msg-property', '--msg-property')
-
-    assert obj.generate_options({}) == ''
+    assert obj.generate({}) == ''
