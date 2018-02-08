@@ -1,9 +1,9 @@
 from autologging import logged, traced
 
 from optconstruct.types.composed import BrokerURLnodeJS
-from optconstruct.types.composed.msg_clients.msgproperty import MsgProperty
-from optconstruct.types.composed.msg_clients.msgcontentlist import MsgContentList
-from optconstruct.types.composed.msg_clients.msgcontentmap import MsgContentMap
+from optconstruct.types.kwoptions.msgproperty import MsgProperty
+from optconstruct.types.listoptions.msgcontentlist import MsgContentList
+from optconstruct.types.kwoptions.msgcontentmap import MsgContentMap
 from optconstruct.types.prefixed import Prefixed
 from optconstruct.types import Toggle
 

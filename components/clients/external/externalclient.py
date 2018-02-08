@@ -38,7 +38,7 @@ class ExternalClient(Client):
         """
 
         cmd = [
-            opt.generate_options(self.data)
+            opt.generate(self.data)
             for opt in self.cli_params_transformation
             if opt.satisfied(self.data)
         ]
