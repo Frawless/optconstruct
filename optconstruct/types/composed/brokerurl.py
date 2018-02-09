@@ -1,21 +1,20 @@
+"""
+    # TODO jstejska: Fill package info
+"""
+
 import copy
 import reformat
 from optconstruct.types import BasicComposed
 
 
 class BrokerURLnodeJS(BasicComposed):
-    """
-    BrokerURL option parser for nodeJS messaging client.
-    """
+    """BrokerURL option construct class for nodeJS messaging client."""
 
     composed_keys = {'host'}
 
     def generate(self, data, client=None):
-        """
-        Generate option brokerURL option.
+        """Generate option brokerURL option.
 
-        Parameters
-        ----------
         :param data: data with specified option's values
         :type data: dict
         :param client: client's label
@@ -45,16 +44,11 @@ class BrokerURLnodeJS(BasicComposed):
 
 
 class BrokerURLPythonProton(BasicComposed):
-    """
-    BrokerURL option parser for Proton-Python messaging client.
-    """
+    """ BrokerURL option parser for Proton-Python messaging client."""
 
     def generate(self, data, client=None):
-        """
-        Generate option brokerURL option.
+        """Generate option brokerURL option.
 
-        Parameters
-        ----------
         :param data: data with specified option's values
         :type data: dict
         :param client: client's label
