@@ -33,18 +33,19 @@ class BrokerURLnodeJS(BasicComposed):
         credentials = reformat.reformat("%{user|%s}%{password|:%s}", data)
 
         if credentials:
-            tmp_data = copy.deepcopy(data)
-            tmp_data['credentials'] = credentials
+            data_copy = copy.deepcopy(data)
+            data_copy['credentials'] = credentials
         else:
-            tmp_data = data
+            data_copy = data
 
-        broker_url = self.prefix + " " + reformat.reformat("%{credentials|%s@}%{host}%{port|:%s}", tmp_data)
+        pattern = self._postprocessing("%{credentials|%s@}%{host}%{port|:%s}")
+        broker_url = self.prefix + " " + reformat.reformat(pattern, data_copy)
 
         return broker_url
 
 
 class BrokerURLPythonProton(BasicComposed):
-    """ BrokerURL option parser for Proton-Python messaging client."""
+    """BrokerURL option parser for Proton-Python messaging client."""
 
     def generate(self, data, client=None):
         """Generate option brokerURL option.
@@ -61,18 +62,20 @@ class BrokerURLPythonProton(BasicComposed):
         broker_url = data.get('broker-url', None)
 
         if broker_url is not None:
-            print(broker_url)
             broker_url = self.prefix + " " + broker_url
             return broker_url
 
-        credentials = reformat.reformat("%{user|%s}%{password|:%s}", data)
+        pattern = "%{user|%s}%{password|:%s}"
+
+        credentials = reformat.reformat(pattern, data)
 
         if credentials:
-            tmp_data = copy.deepcopy(data)
-            tmp_data['credentials'] = credentials
+            data_copy = copy.deepcopy(data)
+            data_copy['credentials'] = credentials
         else:
-            tmp_data = data
+            data_copy = data
 
-        broker_url = self.prefix + " " + reformat.reformat("%{credentials|%s@}%{host}%{port|:%s}%{address|/%s}", tmp_data)
+        pattern = self._postprocessing("%{credentials|%s@}%{host}%{port|:%s}%{address|/%s}")
+        broker_url = self.prefix + " " + reformat.reformat(pattern, data_copy)
 
         return broker_url
