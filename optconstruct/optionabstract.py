@@ -39,3 +39,15 @@ class OptionAbstract:
         :raise: NotImplementedError
         """
         raise NotImplementedError
+
+    @staticmethod
+    def _postprocessing(pattern):
+        """Add additional formatting to the option.
+
+        :param pattern:
+        :type pattern: string
+
+        :return:
+        :rtype:
+        """
+        return pattern
