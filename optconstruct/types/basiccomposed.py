@@ -33,3 +33,4 @@ class BasicComposed(OptionAbstract):
         :raise: NotImplementedError
         """
         raise NotImplementedError
+
