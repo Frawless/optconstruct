@@ -11,9 +11,8 @@ from components.nodes.node import Node
 @logged
 @traced
 class Receiver(Client, amom.client.Receiver):
-    """
-    External Python-Proton receiver client
-    """
+    """External Python-Proton receiver client."""
+
     # client is installed from cli-rhea
     cli_command = ['cli-proton-python-receiver']
 
@@ -81,8 +80,7 @@ class Receiver(Client, amom.client.Receiver):
     ]
 
     def __init__(self, node: Node):
-        """
-        Method for init receiver.
-        """
+        """Init Python receiver."""
+
         amom.client.Receiver.__init__(self)
         Client.__init__(self, node)

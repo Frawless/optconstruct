@@ -9,9 +9,8 @@ from components.clients.external.externalclient import ExternalClient
 @logged
 @traced
 class Client(ExternalClient):
-    """
-    NodeJS RHEA client
-    """
+    """NodeJS RHEA client"""
+
     supported_protocols = [protocols.Amqp10()]
     name = 'NodeJS RHEA client'
     version = '1.0'

@@ -15,9 +15,7 @@ from .client import Client
 @logged
 @traced
 class Sender(Client, amom.client.Sender):
-    """
-    External NodeJS sender client
-    """
+    """External NodeJS sender client."""
     # client is installed from cli-rhea, node_app is there only for backward compatibility
     cli_command = ['cli-rhea-sender']
 
@@ -85,16 +83,18 @@ class Sender(Client, amom.client.Sender):
     ]
 
     def __init__(self, node: Node):
-        """
-        Method for init NodeJS sender.
-        """
+        """Init of NodeJS sender."""
+
         amom.client.Sender.__init__(self)
         Client.__init__(self, node)
 
     def _send_message(self, **kwargs):
-        """
-        Method for send message.
+        """Send message.
+
+        :param kwargs:
+        :type kwargs:
         :return:
+        :rtype:
         """
         self._set_attr_values(kwargs)
         cmd = self._build_sender_command()

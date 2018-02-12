@@ -3,9 +3,7 @@ from amom.node import Node
 
 
 class ExternalClient(Client):
-    """
-    External CLI based clients
-    """
+    """External CLI based clients."""
 
     # attribute-argument mapping dictionary
     cli_params_transformation = []
@@ -24,16 +22,19 @@ class ExternalClient(Client):
         self._not_supported()
 
     def _execute(self, cmd):
-        """
-        Method for execute client's command.
+        """Method for execute client's command.
+
         :param cmd: command
+        :type cmd:
+
         :return:
+        :rtype:
         """
         self.node.execute(cmd)
 
     def build_command(self):
-        """
-        Method for create command for execute based on client's available attributes.
+        """Method for create command for execute based on client's available attributes.
+
         :return: list with command attributes
         """
 
@@ -45,4 +46,6 @@ class ExternalClient(Client):
 
         cmd = self.cli_command + cmd
 
-        return " ".join(filter(None, cmd))
+        print(cmd)
+
+        return " ".join(filter(None, cmd)), cmd

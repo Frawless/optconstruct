@@ -15,9 +15,8 @@ from components.nodes.node import Node
 @logged
 @traced
 class Sender(Client, amom.client.Sender):
-    """
-    External Python-Proton sender client
-    """
+    """External Python-Proton sender client."""
+
     # client is installed from cli-rhea, node_app is there only for backward compability
     cli_command = ['cli-proton-python-sender']
     # Client-sender params for build execute command
@@ -91,16 +90,18 @@ class Sender(Client, amom.client.Sender):
 
 
     def __init__(self, node: Node):
-        """
-        Methd for init Python sender.
-        """
+        """Init of Python sender."""
+
         amom.client.Sender.__init__(self)
         Client.__init__(self, node)
 
     def _send_message(self, **kwargs):
-        """
-        Method for send message.
+        """Send message.
+
+        :param kwargs:
+        :type kwargs:
         :return:
+        :rtype:
         """
         self._set_attr_values(kwargs)
         cmd = self._build_sender_command()

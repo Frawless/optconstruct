@@ -11,9 +11,8 @@ from .client import Client
 @logged
 @traced
 class Connector(Client, amom.client.Connector):
-    """
-    External Python-Proton connector client
-    """
+    """External Python-Proton connector client."""
+
     # client is installed from cli-rhea, node_app is there only for backward compatibility
     cli_command = ['cli-proton-python-connector']
 
@@ -51,8 +50,7 @@ class Connector(Client, amom.client.Connector):
     ]
 
     def __init__(self):
-        """
-        Method for init receiver.
-        """
+        """Init of Python connector."""
+
         amom.client.Connector.__init__(self)
         Client.__init__(self)

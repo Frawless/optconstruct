@@ -12,9 +12,7 @@ from .client import Client
 @logged
 @traced
 class Receiver(Client, amom.client.Receiver):
-    """
-    External NodeJS receiver client
-    """
+    """External NodeJS receiver client."""
     # client is installed from cli-rhea, node_app is there only for backward compatibility
     cli_command = ['cli-rhea-receiver']
 
@@ -66,8 +64,7 @@ class Receiver(Client, amom.client.Receiver):
     ]
 
     def __init__(self, node: Node):
-        """
-        Method for init receiver.
-        """
+        """Init of NodeJS receiver."""
+
         amom.client.Receiver.__init__(self)
         Client.__init__(self, node)

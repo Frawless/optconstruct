@@ -11,9 +11,8 @@ from .client import Client
 @logged
 @traced
 class Connector(Client, amom.client.Connector):
-    """
-    External NodeJS connector client
-    """
+    """External NodeJS connector client."""
+
     # client is installed from cli-rhea, node_app is there only for backward compatibility
     cli_command = ['cli-rhea-connector']
 
@@ -52,8 +51,7 @@ class Connector(Client, amom.client.Connector):
     ]
 
     def __init__(self):
-        """
-        Method for init receiver.
-        """
+        """Init of NodeJS connector."""
+
         amom.client.Connector.__init__(self)
         Client.__init__(self)

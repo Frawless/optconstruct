@@ -8,9 +8,8 @@ from components.clients.external.externalclient import ExternalClient
 @logged
 @traced
 class Client(ExternalClient):
-    """
-    Python Proton client
-    """
+    """Python Proton client."""
+
     supported_protocols = [protocols.Amqp10()]
     name = 'Python Proton client'
     version = '1.0.1'
