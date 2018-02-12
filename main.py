@@ -36,9 +36,15 @@ if __name__ == "__main__":
         'address': 'test',
         'host': '0.0.0.0',
         'port': '5672',
-        'broker-url': 'test'
+        'broker-url': None,
+        'user': 'user',
+        'password': 'password'
     }
 
-    print("NodeJS: " + nodejsRcv.build_command())
+    str_cmd, list_cmd = nodejsRcv.build_command()
 
-    print("Python: " + pythonRcv.build_command())
+    print("NodeJS: " + str_cmd)
+
+    str_cmd, list_cmd = pythonRcv.build_command()
+
+    print("Python: " + str_cmd)
