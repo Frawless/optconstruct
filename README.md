@@ -48,7 +48,7 @@ Not yet uploaded to pypi.
 
 ### How to run tests
 ```bash
-$ pytest tests/ 
+$ python -m pytest tests/ 
 ```
 
 ## License
