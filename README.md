@@ -1,12 +1,12 @@
-# Option Construct Package (opt_construct)
+# Option Construct Package (optconstruct)
 
 Package for construct options of Messaging Clients or Ansible based on prefix and input data.  
 
 ## Build/Test Status
-[![Build Status](https://travis-ci.org/rh-messaging-qe/opt-construct.svg?branch=master)](https://travis-ci.org/rh-messaging-qe/opt-construct)
-[![GitHub Issues](https://img.shields.io/github/issues/rh-messaging-qe/opt-construct.svg)](https://github.com/rh-messaging-qe/opt-construct/issues)
-[![GitHub Issues](https://img.shields.io/github/issues-pr/rh-messaging-qe/opt-construct.svg)](https://github.com/rh-messaging-qe/opt-construct/pulls)
-[![pypi](https://img.shields.io/pypi/v/opt_construct.svg)](https://github.com/rh-messaging-qe/opt_construct)
+[![Build Status](https://travis-ci.org/Frawless/optconstruct.svg?branch=master)](https://travis-ci.org/Frawless/optconstruct)
+[![GitHub Issues](https://img.shields.io/github/issues/Frawless/optconstruct.svg)](https://github.com/Frawless/optconstruct/issues)
+[![GitHub Issues](https://img.shields.io/github/issues-pr/Frawless/optconstruct.svg)](https://github.com/Frawless/optconstruct/pulls)
+[![pypi](https://img.shields.io/pypi/v/optconstruct.svg)](https://github.com/Frawless/optconstruct)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -39,7 +39,9 @@ Python >= 3.5
 [reformat](https://bitbucket.org/zkraus/reformat)
 
 ## Install & Run
-Not yet uploaded to pypi.
+```bash
+$ pip install optconstruct 
+```
 
 ## Tests
 

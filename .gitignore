@@ -2,3 +2,8 @@
 .pyenv3
 *.py[co]
 *cache*
+sdist
+.egg*
+dist
+build
+*.egg*

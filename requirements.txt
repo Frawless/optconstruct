@@ -4,3 +4,4 @@ pytest-logger
 colorlog
 reformat
 coverage
+optconstruct
