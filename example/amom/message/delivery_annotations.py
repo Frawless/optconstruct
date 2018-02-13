@@ -1,6 +1,11 @@
+"""
+    # TODO jstejska: Package description
+"""
+
+
 class DeliveryAnnotations:
-    """
-    @TODO
+    """@TODO
+
     3.2.2 Delivery Annotations
 
     <type name="delivery-annotations" class="restricted" source="annotations" provides="section">
@@ -20,5 +25,6 @@ class DeliveryAnnotations:
     an empty map of annotations.
 
     """
+
     def __init__(self):
         pass

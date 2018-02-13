@@ -1,3 +1,7 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 from .header import Header
 from .delivery_annotations import DeliveryAnnotations
 from .message_annotations import MessageAnnotations

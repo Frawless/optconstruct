@@ -1,5 +1,10 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 from autologging import logged, traced
 
+from amom.node import Node
 from optconstruct.types.composed import BrokerURLnodeJS
 from optconstruct.types.prefixed import Prefixed
 from optconstruct.types import Toggle
@@ -50,8 +55,8 @@ class Connector(Client, amom.client.Connector):
 
     ]
 
-    def __init__(self):
+    def __init__(self, node: Node):
         """Init of NodeJS connector."""
 
         amom.client.Connector.__init__(self)
-        Client.__init__(self)
+        Client.__init__(self, node)

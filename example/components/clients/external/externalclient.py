@@ -1,3 +1,7 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 from amom.client.client import Client
 from amom.node import Node
 
@@ -11,13 +15,14 @@ class ExternalClient(Client):
     data = set()
 
     def __init__(self, node: Node):
-        super().__init__()
+        super(ExternalClient, self).__init__()
         self.node = node
 
     def _run(self):
-        """
+        """ # TODO jstejska: Description
 
-        :return:
+        :return: # TODO jstejska: Description
+        :rtype: # TODO jstejska: type
         """
         self._not_supported()
 
@@ -25,10 +30,10 @@ class ExternalClient(Client):
         """Method for execute client's command.
 
         :param cmd: command
-        :type cmd:
+        :type cmd: # TODO jstejska: type
 
-        :return:
-        :rtype:
+        :return: # TODO jstejska: Description
+        :rtype: # TODO jstejska: type
         """
         self.node.execute(cmd)
 
@@ -36,6 +41,7 @@ class ExternalClient(Client):
         """Method for create command for execute based on client's available attributes.
 
         :return: list with command attributes
+        :rtype: # TODO jstejska: type
         """
 
         cmd = [

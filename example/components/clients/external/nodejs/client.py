@@ -1,6 +1,9 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 from autologging import logged, traced
 from components.nodes.node import Node
-
 
 import components.network.aplication.messaging as protocols
 from components.clients.external.externalclient import ExternalClient

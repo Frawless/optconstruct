@@ -1,3 +1,7 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 # -*- coding: utf-8 -*-
 
 from autologging import logged, traced
@@ -11,15 +15,19 @@ import inspect
 @logged
 @traced
 class Execution:
-    """
-    Abstract of execution
-    """
+    """Abstract of execution."""
+
     def __init__(self, hostname):
         self.hostname = hostname
 
     def execute(self, command):
-        """
-        Execute command on node
+        """Execute command on node.
+
+        :param command:
+        :type command:
+
+        :return:
+        :rtype:
         """
         Execution.__log.info('Executing command on node %s..' % self.hostname)
         return self._execute(command)

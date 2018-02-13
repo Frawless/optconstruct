@@ -1,5 +1,8 @@
-from autologging import logged, traced
+"""
+    # TODO jstejska: Package description
+"""
 
+from autologging import logged, traced
 from optconstruct.types.composed import BrokerURLPythonProton
 from optconstruct.types.prefixed import Prefixed
 from optconstruct.types import Toggle
@@ -7,6 +10,7 @@ from optconstruct.types import Toggle
 import amom.client
 from .client import Client
 from components.nodes.node import Node
+
 
 @logged
 @traced

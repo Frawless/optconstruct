@@ -1,3 +1,7 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 # @TODO implement @mlesko Executor
 
 from autologging import logged, traced

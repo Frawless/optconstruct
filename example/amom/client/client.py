@@ -1,12 +1,12 @@
-from inspect import stack
+"""
+    # TODO jstejska: Package description
+"""
 
-from ..node import Node
+from inspect import stack
 
 
 class Client:
-    """
-    Abstract class for every messaging client
-    """
+    """Abstract class for every messaging client."""
 
     # Required variables
     supported_protocols = []
@@ -35,12 +35,14 @@ class Client:
 
 
 class NativeClient(Client):
+    """Abstract class for Native client."""
     def __init__(self):
-        super().__init__()
+        super(NativeClient, self).__init__()
 
 
 class LocalhostClient(Client):
+    """Abstract class for Localhost client."""
     def __init__(self):
-        super().__init__()
+        super(LocalhostClient, self).__init__()
 
 

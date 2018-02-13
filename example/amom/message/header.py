@@ -1,3 +1,8 @@
+"""
+    # TODO jstejska: Package description
+"""
+
+
 class Header:
     """
     3.2.1 Header

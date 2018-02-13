@@ -1,5 +1,8 @@
-from autologging import logged, traced
+"""
+    # TODO jstejska: Package description
+"""
 
+from autologging import logged, traced
 from optconstruct.types.composed.brokerurl import BrokerURLPythonProton
 from optconstruct.types.kwoptions.msgcontentmap import MsgContentMap
 from optconstruct.types.kwoptions.msgproperty import MsgProperty
@@ -98,7 +101,7 @@ class Sender(Client, amom.client.Sender):
     def _send_message(self, **kwargs):
         """Send message.
 
-        :param kwargs:
+        :param kwargs: # TODO jstejska: Description
         :type kwargs:
         :return:
         :rtype:

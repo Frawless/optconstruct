@@ -1,7 +1,9 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 # -*- coding: utf-8 -*-
-"""
-DOC STRING
-"""
+
 import logging
 import shlex
 import subprocess
@@ -17,15 +19,20 @@ logger = logging.getLogger(__name__)
 @logged
 @traced
 class LocalExec:
-    """
-    Local process execution
+    """Local process execution
 
     TODO: Timeout, complete log_adapter
     """
 
     def __init__(self, cmd, timeout=None, stdin=None):
-        """
-        Constructor that will not execute anything, just set things up
+        """Constructor that will not execute anything, just set things up
+
+        :param cmd:
+        :type cmd:
+        :param timeout:
+        :type timeout:
+        :param stdin:
+        :type stdin:
         """
         self.cmd = cmd
         self.x_cmd = None
@@ -47,18 +54,16 @@ class LocalExec:
         self.exec_log_adapter = xtlog.adapters.RemoteExecAdapter(xtlog, {'host': self.host, 'user': None})
 
     def __remove_tailing_newlines(self):
-        """
-        remove tailing newline chars from detected stdout/err
-        """
+        """Remove tailing newline chars from detected stdout/err."""
+
         if self.stdout and self.stdout[-1] == '':
             self.stdout.pop(-1)
         if self.stderr and self.stderr[-1] == '':
             self.stderr.pop(-1)
 
     def _process_cmd(self):
-        """
-        Post-process command, split to correct arguments
-        """
+        """Post-process command, split to correct arguments."""
+
         # pre-process for shlex(posix=True), it consumes '\' as
         # escapes, let's double it
         if not isinstance(self.cmd, list):
@@ -96,7 +101,8 @@ class LocalExec:
             self.fh_stdin.close()
 
     def start(self):
-        """Start pre-prepared command"""
+        """Start pre-prepared command."""
+
         self._pre_start()
 
         command = self.x_cmd
@@ -130,9 +136,8 @@ class LocalExec:
         return ecode
 
     def wait_for_exit(self):
-        """
-        waits for process to finish
-        """
+        """Waits for process to finish."""
+
         LocalExec.__log.debug('wait_for_exit(%s)' % self.x_cmd[0])
         try:
             self.process.communicate()
@@ -148,9 +153,8 @@ class LocalExec:
         return self.ecode
 
     def run_and_wait(self):
-        """
-        runs and waits for completion, returns exit code or None
-        """
+        """Runs and waits for completion, returns exit code or None."""
+
         self.start()
         self.wait_for_exit()
         if self.get_stdout():
@@ -164,9 +168,8 @@ class LocalExec:
         return self.ecode
 
     def get_ecode(self):
-        """
-        returns the process exit code or None if it got killed / did not exit
-        """
+        """Returns the process exit code or None if it got killed / did not exit."""
+
         if self.ecode is not None:
             return self.ecode
         if self.process is not None:
@@ -174,46 +177,35 @@ class LocalExec:
         return None
 
     def finished(self):
-        """
-        returns whether process has finished (True / False ~ yes / no)
-        """
+        """Returns whether process has finished (True / False ~ yes / no)."""
+
         if not self.process:
             return True
         return self.process.poll()
 
     def get_stdout(self):
-        """
-        returns stdout from the process run
-        """
+        """Returns stdout from the process run."""
         if not self.finished():
             self._sync_stdx()
         return strip_endlines(self.stdout)
 
     def get_stderr(self):
-        """
-        returns stderr from the process run
-        """
+        """Returns stderr from the process run."""
         if not self.finished():
             self._sync_stdx()
         return strip_endlines(self.stderr)
 
     def get_stdin(self):
-        """
-        returns stdin fed to the process
-        """
+        """Returns stdin fed to the process."""
         return self.stdin
 
     def set_stdin(self, in_str):
-        """
-        sets stdin stream to be fed to the process
-        """
+        """Sets stdin stream to be fed to the process."""
         self.stdin = in_str
         return self.stdin
 
     def get_duration(self):
-        """
-        gets duration of runned command or None if command was not launched yet
-        """
+        """Gets duration of runned command or None if command was not launched yet."""
         if self.ts_start is None:
             return None
         ts_end = self.ts_stop or time.time()
@@ -222,9 +214,7 @@ class LocalExec:
 
 
 def strip_endlines(in_arg):
-    """
-    remove eol characters Linux/Win/Mac (input can be string or list of strings)
-    """
+    """Remove eol characters Linux/Win/Mac (input can be string or list of strings)."""
 
     if isinstance(in_arg, (tuple, list)):
         buff = []

@@ -1,6 +1,10 @@
+"""
+    # TODO jstejska: Package description
+"""
+
+
 class ApplicationData:
-    """
-    @TODO
-    """
+    """@TODO"""
+
     def __init__(self):
         pass

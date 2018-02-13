@@ -1,3 +1,7 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 from autologging import logged, traced
 
 from optconstruct.types.composed import BrokerURLnodeJS

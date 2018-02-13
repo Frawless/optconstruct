@@ -1,9 +1,13 @@
+"""
+    # TODO jstejska: Package description
+"""
+
 from inspect import stack
 
 
 class Node:
-    """
-    Represents virtual destination/service aka node.
+    """Represents virtual destination/service aka node.
+    
     In a case of interconnect vm with qdrouterd is represented as a Router node.
     When there is a sender present on such node, it is a Sender node.
     All future representations should inherit from this class.
@@ -14,10 +18,13 @@ class Node:
         self.ip = ip
 
     def execute(self, command):
-        """
-        Execute command on remote node
+        """Execute command on remote node.
+        
         :param command: list
-        :return:
+        :type command: # TODO jstejska: type
+                
+        :return: # TODO jstejska: description
+        :rtype: # TODO jstejska: type
         """
         return self._not_supported()
 

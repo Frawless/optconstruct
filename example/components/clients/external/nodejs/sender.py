@@ -1,5 +1,8 @@
-from autologging import logged, traced
+"""
+    # TODO jstejska: Package description
+"""
 
+from autologging import logged, traced
 from optconstruct.types.composed import BrokerURLnodeJS
 from optconstruct.types.kwoptions.msgproperty import MsgProperty
 from optconstruct.types.listoptions.msgcontentlist import MsgContentList
@@ -91,7 +94,7 @@ class Sender(Client, amom.client.Sender):
     def _send_message(self, **kwargs):
         """Send message.
 
-        :param kwargs:
+        :param kwargs: # TODO jstejska: Description
         :type kwargs:
         :return:
         :rtype:

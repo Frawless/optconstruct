@@ -1,6 +1,7 @@
 from autologging import logged, traced
 from amom.protocol import Protocol
 
+
 @logged
 @traced
 class TLS12(Protocol):
